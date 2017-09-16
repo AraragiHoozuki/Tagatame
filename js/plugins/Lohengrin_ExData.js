@@ -67,8 +67,8 @@ Object.defineProperties(Game_BattlerBase.prototype, {
     WIL: { get: function() { return this.getStatus("WIL"); }, configurable: true },
     LUK: { get: function() { return this.getStatus("LUK"); }, configurable: true },
     //seconary status
-    mhp: { get: function() { return this.getSecondaryStatus("mhp"); }, configurable: true },
-    mmp: { get: function() { return this.getSecondaryStatus("mmp"); }, configurable: true },
+    mhp: { get: function() { return Math.floor(this.getSecondaryStatus("mhp")); }, configurable: true },
+    mmp: { get: function() { return Math.floor(this.getSecondaryStatus("mmp")); }, configurable: true },
     pdm: { get: function() { return this.getSecondaryStatus("pdm"); }, configurable: true },
     mdm: { get: function() { return this.getSecondaryStatus("mdm"); }, configurable: true },
     pdf: { get: function() { return this.getSecondaryStatus("pdf"); }, configurable: true },
@@ -165,7 +165,7 @@ Game_BattlerBase.prototype.getStatus = function (status){
 
 Lohengrin.ExData.Formulas = {
     "mhp": "this.STA * 20",
-    "mmp": "this.INT * 2 + this.WIL * 24",
+    "mmp": "this.INT * 2 + this.WIL * 15",
     "pdm": "this.STR * 2",
     "mdm": "this.INT * 2 + this.WIL * 0.3",
     "pdf": "this.STA / 4",

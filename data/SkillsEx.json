@@ -7,5 +7,8 @@
 	},
 	"9":{
 		"onPreDamage":"if(dmg>=b.hp&&(!b.isStateAffected(24))){b.addState(24);}"
+	},
+	"14":{
+		"rates":{"mdf":1.1, "mmp":1.1}
 	}
 }

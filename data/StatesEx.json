@@ -6,7 +6,7 @@
 		"onTurnStart":"this.gainHp(this.mhp * 0.2)"
 	},
 	"22":{
-		"dot":"0"
+		"dot":0
 	},
 	"23":{
 		"rates":{"pdm":1.75, "pdf":0.25},
@@ -14,5 +14,11 @@
 	},
 	"24":{
 		"onRemove":"this.owner.die();"
+	},
+	"25":{
+		"dot":0
+	},
+	"28":{
+		"rates":{"pdf":2, "mdf":2}
 	}
 }

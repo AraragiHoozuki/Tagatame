@@ -16,6 +16,10 @@
 		"hit": "this.AGI * 0.7 + this.WIL * 0.8 + this.STR * 0.4",
 		"cri": "this.AGI * 0.1 + this.LUK * 1 + this.STR * 0.25"
 	}
+},
+"3":{
+	"classType":"mag",
+	"STR":[12,1.4],"INT":[27,2.5],"STA":[17,2],"AGI":[12,1.6],"WIL":[25,2],"LUK":[8,0.2]
 }
 
 }

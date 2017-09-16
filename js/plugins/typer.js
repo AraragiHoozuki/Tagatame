@@ -1,0 +1,1 @@
+b.addState({"dot":a.INT*1})
