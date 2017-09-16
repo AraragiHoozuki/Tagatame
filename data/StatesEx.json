@@ -1,0 +1,18 @@
+{
+	"2":{"reappliable":false,"dot":[0.2,25],"bonus":{"STR":10}},
+	"21":{
+		"reappliable":false,
+		"bonus":{"mdf":400},
+		"onTurnStart":"this.gainHp(this.mhp * 0.2)"
+	},
+	"22":{
+		"dot":"0"
+	},
+	"23":{
+		"rates":{"pdm":1.75, "pdf":0.25},
+		"bonus":{"psi_r":0.75}
+	},
+	"24":{
+		"onRemove":"this.owner.die();"
+	}
+}

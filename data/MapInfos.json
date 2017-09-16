@@ -1,0 +1,7 @@
+[
+null,
+{"id":1,"expanded":false,"name":"TestRoom","order":1,"parentId":0,"scrollX":767.4,"scrollY":481.2},
+{"id":2,"expanded":true,"name":"据点","order":2,"parentId":0,"scrollX":757.8,"scrollY":718.8},
+{"id":3,"expanded":true,"name":"金钱本","order":3,"parentId":0,"scrollX":767.4,"scrollY":481.2},
+{"id":4,"expanded":false,"name":"初级","order":4,"parentId":3,"scrollX":757.8,"scrollY":958.8}
+]

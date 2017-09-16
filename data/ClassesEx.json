@@ -1,0 +1,21 @@
+{
+	
+"1":{
+	"classType":"phy",
+	"STR":[24,2.4],"INT":[11,1.2],"STA":[27,2.9],"AGI":[13,1.4],"WIL":[10,0.8],"LUK":[5,0.1],
+	"formulas":{
+		"pdm":"this.STR * 1.6 + this.STA * 0.7"
+	}
+},
+"2":{
+	"classType":"phy",
+	"STR":[28,3],"INT":[5,0.7],"STA":[25,2.6],"AGI":[7,1],"WIL":[12,1.4],"LUK":[5,0.1],
+	"formulas":{
+		"mmp": "this.INT * 2 + this.WIL * 2",
+		"pdm":"this.STR * 2.5",
+		"hit": "this.AGI * 0.7 + this.WIL * 0.8 + this.STR * 0.4",
+		"cri": "this.AGI * 0.1 + this.LUK * 1 + this.STR * 0.25"
+	}
+}
+
+}

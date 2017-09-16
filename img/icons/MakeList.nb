@@ -1,0 +1,97 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      2936,         89]
+NotebookOptionsPosition[      2324,         69]
+NotebookOutlinePosition[      2843,         86]
+CellTagsIndexPosition[      2800,         83]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"list", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"StringSplit", "[", 
+       RowBox[{"#", ",", "\"\<.\>\""}], "]"}], "[", 
+      RowBox[{"[", "1", "]"}], "]"}], "&"}], "/@", 
+    RowBox[{"Select", "[", 
+     RowBox[{
+      RowBox[{
+      "Import", "[", "\"\<D:\\\\RMGames\\\\Tagatame\\\\img\\\\icons\>\"", 
+       "]"}], ",", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"StringTake", "[", 
+         RowBox[{"#", ",", 
+          RowBox[{"-", "4"}]}], "]"}], "\[Equal]", "\"\<.png\>\""}], "&"}]}], 
+     "]"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"liststr", "=", 
+   RowBox[{"\"\<[\\\"\>\"", "<>", 
+    RowBox[{"StringRiffle", "[", 
+     RowBox[{"list", ",", "\"\<\\\",\\\"\>\""}], "]"}], "<>", 
+    "\"\<\\\"]\>\""}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Export", "[", 
+  RowBox[{
+  "\"\<D:\\\\RMGames\\\\Tagatame\\\\img\\\\icons\\\\iconlist.txt\>\"", ",", 
+   "liststr"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.7119510645659027`*^9, 3.7119510860884466`*^9}, {
+   3.711951743397084*^9, 3.7119517508318987`*^9}, 3.711951894464642*^9, {
+   3.7119519742805977`*^9, 3.7119519792657304`*^9}, {3.7119524817606554`*^9, 
+   3.711952503831426*^9}, {3.7136089595229816`*^9, 3.713608965043193*^9}, {
+   3.713609132181636*^9, 3.713609164783146*^9}, {3.7136093596388264`*^9, 
+   3.713609373505473*^9}},ExpressionUUID->"6c8a7cd6-ba43-4ed3-b980-\
+0a3d3cbcf07a"],
+
+Cell[BoxData["\<\"D:\\\\RMGames\\\\Tagatame\\\\img\\\\icons\\\\iconlist.txt\"\
+\>"], "Output",
+ CellChangeTimes->{
+  3.7119519854519763`*^9, 3.711952505765875*^9, 3.713608966308699*^9, {
+   3.713609365626068*^9, 
+   3.713609375117962*^9}},ExpressionUUID->"1a9a5f66-22ee-4b6f-9a2d-\
+617ef9ebef84"]
+}, Open  ]]
+},
+WindowSize->{759, 833},
+WindowMargins->{{Automatic, 892}, {74, Automatic}},
+FrontEndVersion->"11.1 for Microsoft Windows (64-bit) (March 13, 2017)",
+StyleDefinitions->FrontEnd`FileName[{$RootDirectory, "C:", "Users", "lo", 
+   "AppData", "Roaming", "Mathematica", "SystemFiles", "FrontEnd", 
+   "StyleSheets"}, "myStyle.nb", CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 1429, 36, 145, "Input", "ExpressionUUID" -> \
+"6c8a7cd6-ba43-4ed3-b980-0a3d3cbcf07a"],
+Cell[2012, 60, 296, 6, 36, "Output", "ExpressionUUID" -> \
+"1a9a5f66-22ee-4b6f-9a2d-617ef9ebef84"]
+}, Open  ]]
+}
+]
+*)
+

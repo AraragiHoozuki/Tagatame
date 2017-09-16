@@ -1,0 +1,11 @@
+{
+	"2":{
+		"onDamage":"BattleManager.InstantAction(b,3,[a])"
+	},
+	"4":{
+		"bonus":{"STR":"Math.floor((1-this.hpRate())/0.07) * this._level * 0.4"}
+	},
+	"9":{
+		"onPreDamage":"if(dmg>=b.hp&&(!b.isStateAffected(24))){b.addState(24);}"
+	}
+}
