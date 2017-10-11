@@ -10,5 +10,14 @@
 	},
 	"14":{
 		"rates":{"mdf":1.1, "mmp":1.1}
+	},
+	"24":{
+		"rates":{"mdm":1.45, "mdf":0.75}
+	},
+	"25":{
+		"bonus":{"pdf":"this.mdf * 0.4"}
+	},
+	"26":{
+		"onPreDamage":"if(Math.random()<=0.6){damage *= 0.85}"
 	}
 }

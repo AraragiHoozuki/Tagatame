@@ -12,7 +12,7 @@ Lohengrin.DF.damageFilter = function (source,target,type0,type1,type2,rate,base)
 	value = base * rate;
 
 	//判定物理魔法
-	var armor_rate = 1;
+	var armor_rate = 0;
 	if (type0 == "phy") {armor_rate = target.pdf / (target.pdf + 500 + target._level * 50);}
 	if (type0 == "mag") {armor_rate = target.mdf / (target.mdf + 500 + target._level * 50);}
 	value = value * (1 - armor_rate);
@@ -22,7 +22,7 @@ Lohengrin.DF.damageFilter = function (source,target,type0,type1,type2,rate,base)
 	if (type1=="null") {
 		hittype_rate = 1;
 	} else {
-		hittype_rate = (1 + source[type1+"_d"]) * (1 - target[type1+"_r"]);
+		hittype_rate = (1 + source[type1+"_assist"]) * (1 - target[type1+"_resist"]);
 	}
 	value = value * hittype_rate;
 
@@ -31,7 +31,7 @@ Lohengrin.DF.damageFilter = function (source,target,type0,type1,type2,rate,base)
 	if (type2=="null") {
 		ele_rate = 1;
 	} else {
-		ele_rate = (1 + source[type2+"_d"]) * (1 - target[type2+"_r"]);
+		ele_rate = (1 + source[type2+"_assist"]) * (1 - target[type2+"_resist"]);
 	}
 	value = value * ele_rate;
 

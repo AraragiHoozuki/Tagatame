@@ -1526,6 +1526,8 @@ Window_ItemList.prototype.drawItemNumber = function(item, x, y, width) {
 Yanfly.Item.Window_ItemList_maxCols = Window_ItemList.prototype.maxCols;
 Window_ItemList.prototype.maxCols = function() {
     if (SceneManager._scene instanceof Scene_Item) return 6;
+    if (SceneManager._scene instanceof Scene_Shop) return 12;
+    if (SceneManager._scene instanceof Scene_Battle) return 12;
     return Yanfly.Item.Window_ItemList_maxCols.call(this);
 };
 

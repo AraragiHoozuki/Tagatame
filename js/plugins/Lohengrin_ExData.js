@@ -78,25 +78,27 @@ Object.defineProperties(Game_BattlerBase.prototype, {
     cri: { get: function() { return this.getSecondaryStatus("cri"); }, configurable: true },
     spd: { get: function() { return this.getSecondaryStatus("spd"); }, configurable: true },
     //resists (d for damage; r for resist)
-    slash_d: { get: function() { return this.getSecondaryStatus("slash_d"); }, configurable: true },
-    slash_r: { get: function() { return this.getSecondaryStatus("slash_r"); }, configurable: true },
-    strike_d: { get: function() { return this.getSecondaryStatus("strike_d"); }, configurable: true },
-    strike_r: { get: function() { return this.getSecondaryStatus("strike_r"); }, configurable: true },
-    thrust_d: { get: function() { return this.getSecondaryStatus("thrust_d"); }, configurable: true },
-    thrust_r: { get: function() { return this.getSecondaryStatus("thrust_r"); }, configurable: true },
+    slash_assist: { get: function() { return this.getSecondaryStatus("slash_assist"); }, configurable: true },
+    slash_resist: { get: function() { return this.getSecondaryStatus("slash_resist"); }, configurable: true },
+    strike_assist: { get: function() { return this.getSecondaryStatus("strike_assist"); }, configurable: true },
+    strike_resist: { get: function() { return this.getSecondaryStatus("strike_resist"); }, configurable: true },
+    thrust_assist: { get: function() { return this.getSecondaryStatus("thrust_assist"); }, configurable: true },
+    thrust_resist: { get: function() { return this.getSecondaryStatus("thrust_resist"); }, configurable: true },
+    shoot_assist: { get: function() { return this.getSecondaryStatus("shoot_assist"); }, configurable: true },
+    shoot_resist: { get: function() { return this.getSecondaryStatus("shoot_resist"); }, configurable: true },
 
-    hot_d: { get: function() { return this.getSecondaryStatus("hot_d"); }, configurable: true },
-    hot_r: { get: function() { return this.getSecondaryStatus("hot_r"); }, configurable: true },
-    cold_d: { get: function() { return this.getSecondaryStatus("cold_d"); }, configurable: true },
-    cold_r: { get: function() { return this.getSecondaryStatus("cold_r"); }, configurable: true },
-    curse_d: { get: function() { return this.getSecondaryStatus("curse_d"); }, configurable: true },
-    curse_r: { get: function() { return this.getSecondaryStatus("curse_r"); }, configurable: true },
-    bless_d: { get: function() { return this.getSecondaryStatus("bless_d"); }, configurable: true },
-    bless_r: { get: function() { return this.getSecondaryStatus("bless_r"); }, configurable: true },
-    kinetic_d: { get: function() { return this.getSecondaryStatus("kinetic_d"); }, configurable: true },
-    kinetic_r: { get: function() { return this.getSecondaryStatus("kinetic_r"); }, configurable: true },
-    psi_d: { get: function() { return this.getSecondaryStatus("psi_d"); }, configurable: true },
-    psi_r: { get: function() { return this.getSecondaryStatus("psi_r"); }, configurable: true }
+    hot_assist: { get: function() { return this.getSecondaryStatus("hot_assist"); }, configurable: true },
+    hot_resist: { get: function() { return this.getSecondaryStatus("hot_resist"); }, configurable: true },
+    cold_assist: { get: function() { return this.getSecondaryStatus("cold_assist"); }, configurable: true },
+    cold_resist: { get: function() { return this.getSecondaryStatus("cold_resist"); }, configurable: true },
+    curse_assist: { get: function() { return this.getSecondaryStatus("curse_assist"); }, configurable: true },
+    curse_resist: { get: function() { return this.getSecondaryStatus("curse_resist"); }, configurable: true },
+    bless_assist: { get: function() { return this.getSecondaryStatus("bless_assist"); }, configurable: true },
+    bless_resist: { get: function() { return this.getSecondaryStatus("bless_resist"); }, configurable: true },
+    kinetic_assist: { get: function() { return this.getSecondaryStatus("kinetic_assist"); }, configurable: true },
+    kinetic_resist: { get: function() { return this.getSecondaryStatus("kinetic_resist"); }, configurable: true },
+    psi_assist: { get: function() { return this.getSecondaryStatus("psi_assist"); }, configurable: true },
+    psi_resist: { get: function() { return this.getSecondaryStatus("psi_resist"); }, configurable: true }
 });
 
 Game_BattlerBase.prototype.baseStatus = function (status){
@@ -165,7 +167,7 @@ Game_BattlerBase.prototype.getStatus = function (status){
 
 Lohengrin.ExData.Formulas = {
     "mhp": "this.STA * 20",
-    "mmp": "this.INT * 2 + this.WIL * 15",
+    "mmp": "this.INT * 2 + this.WIL * 10",
     "pdm": "this.STR * 2",
     "mdm": "this.INT * 2 + this.WIL * 0.3",
     "pdf": "this.STA / 4",
@@ -299,12 +301,12 @@ Game_BattlerBase.prototype.baseAttack = function (){
         ex = $dataEnemiesEx[this._enemyId]; 
     }
     if (ex&&ex.classType){
-        if (classType = "phy") {return this.pdm;}
+        if (ex.classType == "phy") {return this.pdm;}
+        if (ex.classType == "mag") {return this.mdm;}
     } else {
-        return this.mdm;
-    }
-    return this.phy;
-}
+        return this.pdm;
+    }  
+};
 // status window ==================================================================================================
 Window_Status.prototype.refresh = function() {
     this.contents.clear();
@@ -371,15 +373,15 @@ Window_Status.prototype.drawSecStatus = function(x, y) {
 
 Window_Status.prototype.drawResists = function(x, y) {
     var lineHeight = this.lineHeight();
-    var status_array = ["slash","strike","thrust","hot","cold","curse","bless","kinetic","psi"];
-    var status_names = ["斩击","打击","突刺","灼热","寒冷","诅咒","祝福","动能","心灵"];
+    var status_array = ["slash","strike","thrust","shoot","hot","cold","curse","bless","kinetic","psi"];
+    var status_names = ["斩击","打击","突刺","射击","灼热","寒冷","诅咒","祝福","动能","心灵"];
     for (var i = 0; i < 9; i++) {
       var paramId = i + 2;
       var y2 = y + lineHeight * i;
       this.changeTextColor(this.systemColor());
       this.drawText(status_names[i], x, y2, 160);
       this.resetTextColor();
-      this.drawText((1+this._actor[status_array[i]+"_d"])*100+"%/"+(1-this._actor[status_array[i]+"_r"])*100+"%", x + 100, y2, 200, 'right');
+      this.drawText((1+this._actor[status_array[i]+"_assist"])*100+"%/"+(1-this._actor[status_array[i]+"_resist"])*100+"%", x + 100, y2, 200, 'right');
     }
 };
 

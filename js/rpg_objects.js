@@ -1573,7 +1573,7 @@ Game_Action.prototype.evaluateWithTarget = function(target) {
 Game_Action.prototype.testApply = function(target) {
     return (this.isForDeadFriend() === target.isDead() &&
             ($gameParty.inBattle() || this.isForOpponent() ||
-            (this.isHpRecover() && target.hp < target.mhp) ||
+            (/*this.isHpRecover() && target.hp < target.mhp*/true) ||
             (this.isMpRecover() && target.mp < target.mmp) ||
             (this.hasItemAnyValidEffects(target))));
 };
@@ -3206,6 +3206,7 @@ Game_Battler.prototype.gainHp = function(value) {
 };
 
 Game_Battler.prototype.gainMp = function(value) {
+    value = Math.floor(value);
     this._result.mpDamage = -value;
     this.setMp(this.mp + value);
 };
@@ -5250,7 +5251,8 @@ Game_Troop.prototype.troop = function() {
     return $dataTroops[this._troopId];
 };
 
-Game_Troop.prototype.setup = function(troopId) {
+
+Game_Troop.prototype.setup = function(troopId, levels) {
     this.clear();
     this._troopId = troopId;
     this._enemies = [];
@@ -5259,7 +5261,7 @@ Game_Troop.prototype.setup = function(troopId) {
             var enemyId = member.enemyId;
             var x = member.x;
             var y = member.y;
-            var enemy = new Game_Enemy(enemyId, x, y);
+            var enemy = new Game_Enemy(enemyId, x, y, levels?levels.shift():null);
             if (member.hidden) {
                 enemy.hide();
             }

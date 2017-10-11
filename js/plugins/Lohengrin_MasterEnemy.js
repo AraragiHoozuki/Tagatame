@@ -31,26 +31,6 @@ Game_Enemy.prototype.initialize = function(enemyId, x, y, level) {
     this.setup(enemyId, x, y, level);
 };
 
-
-Game_Troop.prototype.setup = function(troopId, levels) {
-    this.clear();
-    this._troopId = troopId;
-    this._enemies = [];
-    this.troop().members.forEach(function(member) {
-        if ($dataEnemies[member.enemyId]) {
-            var enemyId = member.enemyId;
-            var x = member.x;
-            var y = member.y;
-            var enemy = new Game_Enemy(enemyId, x, y, levels?levels.shift():null);
-            if (member.hidden) {
-                enemy.hide();
-            }
-            this._enemies.push(enemy);
-        }
-    }, this);
-    this.makeUniqueNames();
-};
-
 BattleManager.setup = function(troopId, canEscape, canLose, levels) {
     this.initMembers();
     this._canEscape = canEscape;

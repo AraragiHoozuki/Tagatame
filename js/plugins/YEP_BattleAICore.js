@@ -659,8 +659,8 @@ Game_Troop.prototype.updateAIPatterns = function() {
 };
 
 Yanfly.CoreAI.Game_Troop_setup = Game_Troop.prototype.setup;
-Game_Troop.prototype.setup = function(troopId) {
-    Yanfly.CoreAI.Game_Troop_setup.call(this, troopId);
+Game_Troop.prototype.setup = function(troopId,levels) {
+    Yanfly.CoreAI.Game_Troop_setup.call(this, troopId,levels);
     this._aiKnownElementRates = {};
 };
 
