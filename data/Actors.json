@@ -2,5 +2,5 @@
 null,
 {"id":1,"battlerName":"Actor2_7","characterIndex":1,"characterName":"Package1","classId":2,"equips":[1,1,0,0,0],"faceIndex":0,"faceName":"#ahat","traits":[],"initialLevel":5,"maxLevel":99,"name":"阿哈特","nickname":"","note":"","profile":""},
 {"id":2,"battlerName":"","characterIndex":0,"characterName":"#selena","classId":3,"equips":[0,0,0,0,0],"faceIndex":0,"faceName":"#selena","traits":[],"initialLevel":5,"maxLevel":99,"name":"夏尔","nickname":"","note":"","profile":""},
-{"id":3,"battlerName":"","characterIndex":5,"characterName":"Package1","classId":4,"equips":[0,0,0,0,0],"faceIndex":0,"faceName":"#neika","traits":[],"initialLevel":95,"maxLevel":99,"name":"妮卡","nickname":"","note":"","profile":""}
+{"id":3,"battlerName":"","characterIndex":5,"characterName":"Package1","classId":4,"equips":[3,0,0,1,0],"faceIndex":0,"faceName":"#neika","traits":[],"initialLevel":8,"maxLevel":99,"name":"妮卡","nickname":"","note":"","profile":""}
 ]

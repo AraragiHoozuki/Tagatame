@@ -1,6 +1,7 @@
 {
 
 "1":{"bonus":{"STR":4,"pdm":20}},
-"2":{"bonus":{"STA":5,"pdm":37,"cri":10}}
+"2":{"bonus":{"STA":5,"pdm":37,"cri":10}},
+"3":{"bonus":{"INT":4, "mdm":16}}
 
 }
