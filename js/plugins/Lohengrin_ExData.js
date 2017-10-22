@@ -101,6 +101,8 @@ Object.defineProperties(Game_BattlerBase.prototype, {
     psi_resist: { get: function() { return this.getSecondaryStatus("psi_resist"); }, configurable: true }
 });
 
+
+
 Game_BattlerBase.prototype.baseStatus = function (status){
     var ex;
     if (this.isActor()){
@@ -307,6 +309,16 @@ Game_BattlerBase.prototype.baseAttack = function (){
         return this.pdm;
     }  
 };
+
+Game_BattlerBase.prototype.hasTag = function (tag){
+    var tags;
+    if (this.isActor()){
+        tags = ["human"]; 
+    } else {
+        tags = $dataEnemiesEx[this._enemyId]["tags"]; 
+    }
+    return tags.contains(tag);
+};
 // status window ==================================================================================================
 Window_Status.prototype.refresh = function() {
     this.contents.clear();
@@ -375,7 +387,7 @@ Window_Status.prototype.drawResists = function(x, y) {
     var lineHeight = this.lineHeight();
     var status_array = ["slash","strike","thrust","shoot","hot","cold","curse","bless","kinetic","psi"];
     var status_names = ["斩击","打击","突刺","射击","灼热","寒冷","诅咒","祝福","动能","心灵"];
-    for (var i = 0; i < 9; i++) {
+    for (var i = 0; i < 10; i++) {
       var paramId = i + 2;
       var y2 = y + lineHeight * i;
       this.changeTextColor(this.systemColor());

@@ -38,5 +38,25 @@
 	},
 	"34":{
 		"bonus":{"STR":25}
+	},
+	"35":{
+		"bonus":{"STR":20}
+	},
+	"36":{
+		"rates":{"pdm":1.6}
+	},
+	"37":{
+		"reappliable":true,
+		"rates":{"mdm":1.25}
+	},
+	"38":{
+		"rates":{"INT":2}
+	},
+	"39":{"reappliable":true},
+	"40":{"rates":{"pdf":0.1}},
+	"41":{"bonus":{"shoot_assist":0.2}},
+	"42":{"bonus":{"shoot_resist":-1.5}},
+	"43":{
+		"rates":{"eva":5}
 	}
 }

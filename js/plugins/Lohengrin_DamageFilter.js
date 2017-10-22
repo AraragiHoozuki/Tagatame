@@ -11,8 +11,16 @@ Lohengrin.DF.damageFilter = function (source,target,type0,type1,type2,rate,base)
 	rate = rate||1;
 	value = base * rate;
 
+    var ex;
+    if (source.isActor()){
+        ex = $dataClassesEx[source._classId]; 
+    } else {
+        ex = $dataEnemiesEx[source._enemyId]; 
+    }
+
 	//判定物理魔法
 	var armor_rate = 0;
+    if (type0 == "null") {type0 = source.classType;}
 	if (type0 == "phy") {armor_rate = target.pdf / (target.pdf + 500 + target._level * 50);}
 	if (type0 == "mag") {armor_rate = target.mdf / (target.mdf + 500 + target._level * 50);}
 	value = value * (1 - armor_rate);

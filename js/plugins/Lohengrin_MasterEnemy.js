@@ -47,3 +47,28 @@ Game_Enemy.prototype.exp = function() {
 Game_Enemy.prototype.gold = function() {
     return this.enemy().gold * this._level;
 };
+
+Game_Enemy.prototype.makeDropItems = function() {    
+    var drops = this.enemy().dropItems.reduce(function(r, di) {
+        if (di.kind > 0 && Math.random() * di.denominator < this.dropItemRate()) {
+            return r.concat(this.itemObject(di.kind, di.dataId));
+        } else {
+            return r;
+        }
+    }.bind(this), []);
+
+    var ex = $dataEnemiesEx[this._enemyId];
+    if(ex&&ex.drops){
+        drops = ex.drops.reduce(function(r, di) {
+            if (di.kind > 0 && Math.random() < this.dropItemRate() * (di.prob + (this._level - ex.lv) / 100)) {
+                var num = di.num;
+                do {r = r.concat(this.itemObject(di.kind, di.id)); num--; } while (num > 0);
+                return r;
+            } else {
+                return r;
+            }
+        }.bind(this), drops);
+    }
+
+    return drops;
+};

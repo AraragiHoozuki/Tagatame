@@ -2,6 +2,8 @@
 
 "1":{"bonus":{"STR":4,"pdm":20}},
 "2":{"bonus":{"STA":5,"pdm":37,"cri":10}},
-"3":{"bonus":{"INT":4, "mdm":16}}
+"3":{"bonus":{"INT":4, "mdm":16}},
+"4":{"bonus":{"STR":20, "INT":20, "mdm":46}},
+"5":{"bonus":{"STR":10, "AGI":30, "pdm":135, "shoot_assist":0.2}}
 
 }
