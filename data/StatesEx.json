@@ -34,7 +34,7 @@
 		"rates":{"pdf":0.25, "mdf":0.25}
 	},
 	"33":{
-		"onPreDamage":"b.removeState(33);if(b.mp>=dmg){b.gainMp(-dmg);dmg=dmf(b,a,'mag','null','null',1,dmg);a.gainHp(-dmg)}else{b.addState(6)}dmg=0;"
+		"onPreDamage":"b.removeState(33);if(b.mp>=dmg){b.gainMp(-dmg);dmg=dmf(b,a,'mag','null','null',1,dmg);a.gainHp(-dmg)}else{b._mp=0;b.addState(6)}dmg=0;"
 	},
 	"34":{
 		"bonus":{"STR":25}
@@ -58,5 +58,13 @@
 	"42":{"bonus":{"shoot_resist":-1.5}},
 	"43":{
 		"rates":{"eva":5}
-	}
+	},
+	"44":{"rates":{"pdm":1.25}},
+	"45":{"rates":{"mdf":0.6}},
+	"46":{"rates":{"pdf":0.6}},
+	"47":{"rates":{"pdm":2}},
+	"48":{"rates":{"pdf":0.5}},
+    "49":{"onDamage": "if(Math.random()<=0.6){b.instantAction(58,a);}"},
+    "50":{"reappliable":true, "bonus":{"slash_assist":0.15}, "rates":{"cri":1.15}},
+    "51":{"bonus":{"slash_assist":1.16}}
 }

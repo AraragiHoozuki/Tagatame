@@ -27,6 +27,14 @@
 	"formulas":{
 		"mdm": "this.INT * 2.25"
 	}
+},
+"5":{
+	"classType":"phy",
+	"STR":[18,1.4],"INT":[25,2.4],"STA":[16,1.8],"AGI":[24,2.7],"WIL":[25,2.2],"LUK":[20,0.3],
+	"formulas":{
+		"pdm": "this.STR * 0.6 + this.AGI * (1.5 + this._level/255)",
+		"mdm": "this.INT * 1.2 + this.AGI * (0.9 + this._level/255)"
+	}
 }
 
 }

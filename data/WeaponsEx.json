@@ -1,9 +1,12 @@
 {
 
-"1":{"bonus":{"STR":4,"pdm":20}},
-"2":{"bonus":{"STA":5,"pdm":37,"cri":10}},
-"3":{"bonus":{"INT":4, "mdm":16}},
-"4":{"bonus":{"STR":20, "INT":20, "mdm":46}},
-"5":{"bonus":{"STR":10, "AGI":30, "pdm":135, "shoot_assist":0.2}}
+    "1":{"bonus":{"STR":4,"pdm":20}},
+    "2":{"bonus":{"STA":5,"pdm":37,"cri":10}},
+    "3":{"bonus":{"INT":4, "mdm":16}},
+    "4":{"bonus":{"STR":20, "INT":20, "mdm":46}},
+    "5":{"bonus":{"STR":10, "AGI":30, "pdm":135, "shoot_assist":0.2}},
+    "6":{"bonus":{"pdm":25, "mdm":18}},
+    "7":{"bonus":{"AGI":20,"pdm":30, "mdm":30, "hit":75}},
+    "8":{"bonus":{"STR":30, "AGI":30, "pdm":100,"slash_assist":0.1, "kinetic_assist":0.1, "hit":100},"rates":{"cri":1.5}}
 
 }

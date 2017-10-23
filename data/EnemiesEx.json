@@ -105,6 +105,63 @@
 		{"kind":1, "prob":0.2, "id":16, "num":3},
 		{"kind":1, "prob":0.05, "id":16, "num":4}
 	]
+},
+"13":{
+	"lv":20,
+	"classType":"phy",
+	"STR":[26,2.4],"INT":[10,1],"STA":[20,2.5],"AGI":[10,1.5],"WIL":[30,2],"LUK":[0,0.2],
+	"tags":["metal","magic"],
+	"formulas":{
+		"mhp": "this.STA * 25",
+		"pdf": "this.STA / 1.8",
+    	"mdf": "this.INT + this.WIL * 3"
+	},
+	"drops":[
+		{"kind":1, "prob":0.1, "id":17, "num":1},
+		{"kind":1, "prob":0.1, "id":18, "num":1},
+		{"kind":1, "prob":0.1, "id":19, "num":1}
+	]
+},
+"14":{
+	"lv":14,
+	"STR":[17,2.1],"INT":[5,1.2],"STA":[35,2.6],"AGI":[22,1.8],"WIL":[10,1.5],"LUK":[1,0.1],
+	"tags":["machine"],
+	"formulas":{
+		"pdm":"this.STR * 1.4 + this.AGI * 1.2",
+		"mhp": "this.STA * 26"
+	}
+},
+"15":{
+	"lv":18,
+	"STR":[25,3],"INT":[0,1],"STA":[40,2.7],"AGI":[12,1.6],"WIL":[15,1.7],"LUK":[0,0],
+	"tags":["abyss","android"],
+	"formulas":{
+		"pdm": "this.STR * 2.2",
+		"mhp": "this.STA * 28",
+		"mmp": "this.INT + this.WIL * 1.5",
+		"pdf": "300 + this.STA / 2",
+		"mdf": "120 + this.INT"
+	}
+},
+"16":{
+	"lv":20,
+	"STR":[37,2.6],"INT":[22,1.9],"STA":[28,2.1],"AGI":[27,2.8],"WIL":[60,2],"LUK":[10,0.2],
+	"tags":["android","female"],
+	"formulas":{
+		"mhp": "this.STA * 42",
+		"mmp": "this.INT * 2 + this.WIL * 3",
+        "pdm": "this.STR * 0.6 + this.AGI * (1.4 + this._level/255) + this.WIL * 0.1",
+		"pdf": "this.STA + this._level * 4",
+		"mdf": "this.INT + this.WIL + this._level * 4",
+        "cri": "this.AGI * 0.6 + this.LUK"
+	},
+	"drops":[
+		{"kind":1, "prob":0.5, "id":21, "num":3},
+        {"kind":1, "prob":0.2, "id":21, "num":3},
+        {"kind":1, "prob":0.05, "id":21, "num":4},
+		{"kind":1, "prob":0.1, "id":22, "num":1},
+        {"kind":1, "prob":0.05, "id":22, "num":1}
+	]
 }
 
 }

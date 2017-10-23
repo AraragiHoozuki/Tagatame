@@ -23,6 +23,7 @@ Game_Enemy.prototype.setup = function(enemyId, x, y, level) {
     this._screenX = x;
     this._screenY = y;
     this._level = level;
+    this.tags = $dataEnemiesEx[enemyId].tags;
     this.recoverAll();
 };
 

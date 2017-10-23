@@ -440,6 +440,7 @@ Window_Base.prototype.drawFace = function(faceName, faceIndex, x, y, width, heig
     width = width || Window_Base._faceWidth;
     height = height || Window_Base._faceHeight;
     var bitmap = ImageManager.loadFace(faceName);
+    var frame = ImageManager.loadBitmap('img/icons/','portrait_frame',0,true);
     var pw = Window_Base._faceWidth;
     var ph = Window_Base._faceHeight;
     var sw = Math.min(width, pw);
@@ -449,6 +450,7 @@ Window_Base.prototype.drawFace = function(faceName, faceIndex, x, y, width, heig
     var sx = faceIndex % 4 * pw + (pw - sw) / 2;
     var sy = Math.floor(faceIndex / 4) * ph + (ph - sh) / 2;
     this.contents.blt(bitmap, sx, sy, sw, sh, dx, dy);
+    this.contents.blt(frame, 0, 0, 144, 144, dx, dy);
 };
 
 Window_Base.prototype.drawCharacter = function(characterName, characterIndex, x, y) {

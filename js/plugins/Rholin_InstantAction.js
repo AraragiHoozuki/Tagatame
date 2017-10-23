@@ -9,6 +9,7 @@ BattleManager.updateActionLoop = function() {
 };
 
 BattleManager.InstantAction = function(subject, skillId, targets){
+    var phase = this._phase;
     if (this._phase != 'action') {
         this._subject = subject;
     }
@@ -31,4 +32,14 @@ BattleManager.InstantAction = function(subject, skillId, targets){
     if (this._phase != 'action') {
         this.updateActionLoop();
     }
+    this._phase = phase;
+}
+
+Game_BattlerBase.prototype.instantAction = function(skillId, target) {
+    this.clearActions();
+    var action = new Game_Action(this, true);
+    action.setSkill(skillId);
+    action.setTarget(target.index())
+    this._actions.push(action);
+    BattleManager.forceAction(this);
 }
