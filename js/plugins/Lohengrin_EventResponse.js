@@ -4,7 +4,8 @@
 Game_Battler.prototype.onDamage = function(action, value) {
     this.removeStatesByDamage();
     this.chargeTpByDamage(value / this.mhp);
-    //===================================================================
+   
+    
     var a = action.subject();
     var b = this;
     var states = this._states;
@@ -113,3 +114,29 @@ Game_Battler.prototype.onTurnEnd = function() {
 
 //onStateRemove
 // see Lohengrin_MasterState.js
+
+//onEvasion
+Game_Battler.prototype.onEvasion = function(action) {
+    var a = action.subject();
+    var b = this;
+    
+    var states = this._states;
+    for (var i = 0; i < states.length; i++){
+        var masterState = states[i];
+        if (masterState.onEvasion) {
+            eval(masterState.onEvasion);
+        }
+    }
+
+    if(!this.isActor()){return;}
+
+    var skills = this._skills;
+    var equips = this._equips;
+
+    for (var i = 0; i < skills.length; i++){
+        var skillex = $dataSkillsEx[skills[i]];
+        if (skillex&&skillex.onEvasion){
+            eval(skillex.onEvasion);
+        }
+    }
+}

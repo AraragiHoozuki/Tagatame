@@ -35,6 +35,14 @@
 		"pdm": "this.STR * 0.6 + this.AGI * (1.5 + this._level/255)",
 		"mdm": "this.INT * 1.2 + this.AGI * (0.9 + this._level/255)"
 	}
+},
+"6":{
+	"classType":"phy",
+	"STR":[16,1.5],"INT":[17,1.5],"STA":[22,2.4],"AGI":[27,3],"WIL":[20,2],"LUK":[7,0.2],
+	"formulas":{
+        "mmp": "this.INT * 2 + this.WIL * 5",
+		"pdm": "this.STR * 0.4 + this.AGI * 1.75"
+	}
 }
 
 }

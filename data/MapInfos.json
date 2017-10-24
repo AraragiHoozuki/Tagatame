@@ -14,5 +14,5 @@ null,
 {"id":12,"expanded":false,"name":"测试副本","order":3,"parentId":2,"scrollX":773.1428571428571,"scrollY":923.9999999999999},
 {"id":13,"expanded":true,"name":"星见之塔1层","order":13,"parentId":7,"scrollX":941.1428571428571,"scrollY":584.5714285714286},
 {"id":14,"expanded":true,"name":"星见之塔2层","order":14,"parentId":13,"scrollX":1011.4285714285713,"scrollY":821.1428571428571},
-{"id":15,"expanded":false,"name":"星见之塔3层","order":15,"parentId":13,"scrollX":882.8571428571428,"scrollY":1152}
+{"id":15,"expanded":false,"name":"星见之塔3层","order":15,"parentId":13,"scrollX":855.4285714285713,"scrollY":1124.5714285714284}
 ]

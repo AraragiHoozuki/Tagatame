@@ -111,6 +111,9 @@ Game_Action.prototype.apply = function(target) {
             this.applyItemEffect(target, effect);
         }, this);
         this.applyItemUserEffect(target);
+    } else {
+        //Evasion response
+        target.onEvasion(this);
     }
 };
 

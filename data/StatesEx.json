@@ -1,5 +1,5 @@
 {
-	"2":{"reappliable":false,"dot":[0.2,25],"bonus":{"STR":10}},
+	"2":{"rates":{"hit":0.25}},
 	"21":{
 		"reappliable":false,
 		"bonus":{"mdf":400},
@@ -66,5 +66,11 @@
 	"48":{"rates":{"pdf":0.5}},
     "49":{"onDamage": "if(Math.random()<=0.6){b.instantAction(58,a);}"},
     "50":{"reappliable":true, "bonus":{"slash_assist":0.15}, "rates":{"cri":1.15}},
-    "51":{"bonus":{"slash_assist":1.16}}
+    "51":{"bonus":{"slash_assist":1.16}},
+    "53":{"rates":{"cri":2}},
+    "54":{"rates":{"eva":3}},
+    "55":{"rates":{"eva":1.5}},
+    "56":{"rates":{"cri":1.6}},
+    "57":{"onEvasion": "this.instantAction(70,a);"},
+    "58":{"rates":{"pdf":0.5}}
 }

@@ -23,5 +23,12 @@
 	"49":{
 		"bonus":{"shoot_assist":0.1},
 		"rates":{"mdm":1.1}
-	}
+	},
+    "63":{
+        "bonus":{"AGI":50},
+        "rates":{"eva":1.1, "hit":1.1}
+    },
+    "64":{
+        "onEvasion":"this.instantAction(65,this);"
+    }
 }
