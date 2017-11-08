@@ -7,6 +7,7 @@
     "5":{"bonus":{"STR":10, "AGI":30, "pdm":135, "shoot_assist":0.2}},
     "6":{"bonus":{"pdm":25, "mdm":18}},
     "7":{"bonus":{"AGI":20,"pdm":30, "mdm":30, "hit":75}},
-    "8":{"bonus":{"STR":30, "AGI":30, "pdm":100,"slash_assist":0.1, "kinetic_assist":0.1, "hit":100},"rates":{"cri":1.5}}
+    "8":{"bonus":{"STR":30, "AGI":30, "pdm":100,"slash_assist":0.1, "kinetic_assist":0.1, "hit":100},"rates":{"cri":1.5}},
+    "9":{"bonus":{"AGI":45, "pdm":75, "cri":120, "eva":120}}
 
 }

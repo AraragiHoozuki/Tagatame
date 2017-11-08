@@ -1643,9 +1643,11 @@ Game_Action.prototype.itemEva = function(target) {
     }
 };
 
+/*
 Game_Action.prototype.itemCri = function(target) {
     return this.item().damage.critical ? this.subject().cri * (1 - target.cev) : 0;
 };
+*/
 
 Game_Action.prototype.apply = function(target) {
     var result = target.result();

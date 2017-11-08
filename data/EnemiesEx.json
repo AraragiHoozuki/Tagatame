@@ -162,6 +162,43 @@
 		{"kind":1, "prob":0.1, "id":22, "num":1},
         {"kind":1, "prob":0.05, "id":22, "num":1}
 	]
+},
+"17":{
+    "lv":25,
+    "STR":[25,2.5],"INT":[20,2.1],"STA":[22,2.4],"AGI":[32,3.3],"WIL":[45,2],"LUK":[15,0.1],
+    "tags":["android","male"],
+    "formulas":{
+        "mhp": "this.STA * 38",
+        "mmp": "this.INT * 2 + this.WIL * 5",
+        "pdm": "this.STR * 0.4 + this.AGI * 1.75",
+        "pdf": "this.STA + this._level * 7",
+        "mdf": "this.INT + this.WIL + this._level * 4"
+    },
+    "drops":[
+        {"kind":1, "prob":1, "id":23, "num":2},
+        {"kind":1, "prob":0.7, "id":23, "num":2},
+        {"kind":1, "prob":0.5, "id":23, "num":2},
+        {"kind":1, "prob":0.2, "id":23, "num":2},
+        {"kind":1, "prob":0.05, "id":23, "num":4}
+    ]
+},
+"18":{
+	"lv":30,
+	"classType":"phy",
+	"STR":[26,2.7],"INT":[10,1],"STA":[27,3.2],"AGI":[16,1.6],"WIL":[40,2.2],"LUK":[0,0.3],
+	"tags":["metal","magic"],
+	"formulas":{
+		"mhp": "this.STA * 25",
+		"pdf": "this.STA / 1.8",
+    	"mdf": "this.INT + this.WIL * 3"
+	},
+	"drops":[
+		{"kind":1, "prob":0.1, "id":25, "num":1},
+		{"kind":1, "prob":0.1, "id":26, "num":1},
+		{"kind":1, "prob":0.1, "id":27, "num":1},
+        {"kind":1, "prob":0.1, "id":28, "num":1},
+        {"kind":1, "prob":0.1, "id":29, "num":1}
+	]
 }
 
 }
